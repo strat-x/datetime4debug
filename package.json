@@ -1,8 +1,8 @@
 {
   "name": "datetime4debug",
-  "version": "1.0.0",
-  "description": "sample package to print a concise date time stamp for debug and log purpose.",
-  "main": "index.js",
+  "version": "1.0.1",
+  "description": "sample package to print a concise date time stamp for debug and log purpose. you can optionally send a prefix string",
+  "main": "dateTimeFormatter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/strat-x/datetime4debug.git"
   },
-  "author": "",
+  "author": "triathlon71",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/strat-x/datetime4debug/issues"

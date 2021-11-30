@@ -1,0 +1,19 @@
+{
+  "name": "datetime4debug",
+  "version": "1.0.0",
+  "description": "sample package to print a concise date time stamp for debug and log purpose.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strat-x/datetime4debug.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/strat-x/datetime4debug/issues"
+  },
+  "homepage": "https://github.com/strat-x/datetime4debug#readme"
+}

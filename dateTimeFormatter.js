@@ -23,7 +23,7 @@ function dtLogger(_prefix){
     let sekonden = currentDT.getSeconds();
     let milisek = currentDT.getMilliseconds();
     let formattedDT = _prefix + maand + "-" + dag + " " + uur +":"+minuten+":"+sekonden+":"+milisek
-    console.log("this function will format " + currentDT + " into " +formattedDT);
+    //console.log("this function will format " + currentDT + " into " +formattedDT);
     return formattedDT;
 }
 

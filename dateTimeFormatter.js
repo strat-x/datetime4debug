@@ -1,34 +1,34 @@
 function formattedNumber(nbr,digits=2){ //if no nbr of digits send use default 2
+    var formattedNbr;
+
     if (typeof(nbr) === "number") {
         if (digits === 2) {
             if (nbr < 10) {
-                var formattedNbr = "0" + nbr;
+                 formattedNbr = "0" + nbr;
             }
             else {
-                var formattedNbr = nbr;
+                 formattedNbr = nbr;
             }
         } 
         else {
             if (digits === 3) {
                 if (nbr < 10) {
-                    var formattedNbr = "00" + nbr;
+                     formattedNbr = "00" + nbr;
                 }
                 else {
                     if (nbr < 100) {
-                        var formattedNbr = "0" + nbr;
+                         formattedNbr = "0" + nbr;
                     }
                     else {
-                        var formattedNbr = nbr;
+                         formattedNbr = nbr;
                     }
                 }
             } else { //in case of different number of digits, just return the number
-                var formattedNbr = nbr;
-                //console.log('number of digits ', digits, " is not supported. return value ", formattedNbr," unaltered");                
+                 formattedNbr = nbr;             
             }
         }
     } else { //in case a string is provided iso number, return the string
-        //console.log('a string was provided, not a number');
-        var formattedNbr = nbr;
+         formattedNbr = nbr;
     }
 
 
@@ -43,9 +43,7 @@ function dtLogger(_prefix){
     let minuten = formattedNumber(currentDT.getMinutes()); 
     let sekonden = formattedNumber(currentDT.getSeconds());
     let milisek = formattedNumber(currentDT.getMilliseconds(),"4");
-    let formattedDT = _prefix + maand + "-" + dag + " " + uur +":"+minuten+":"+sekonden+":"+milisek
-    
-    return formattedDT;
+    return _prefix + maand + "-" + dag + " " + uur +":"+minuten+":"+sekonden+":"+milisek;
 }
 
 

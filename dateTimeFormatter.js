@@ -1,9 +1,9 @@
 function formattedNumber(nbr,digits=2){ //if no nbr of digits send use default 2
-    var formattedNbr;
+    var formattedNbr = "";
 
     if (typeof(nbr) === "string") { //in case a string is provided iso number, return the string
         formattedNbr = nbr;
-    };
+    }
 
     if ((typeof(nbr) === "number") && (digits === 2)) {
         if (nbr < 10) {
@@ -12,7 +12,7 @@ function formattedNumber(nbr,digits=2){ //if no nbr of digits send use default 2
         else {
             formattedNbr = nbr;
         }
-    };
+    }
         
     if (typeof(nbr) === "number" && (digits === 3)) {
         if (nbr < 10) {

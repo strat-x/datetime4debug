@@ -10,12 +10,11 @@ function formattedNumber(nbr,digits=2){ //if no nbr of digits send use default 2
             case 2:
                 if (nbr < 10) {                    
                     formattedNbr = "0" + nbr;
-                    //console.log("number ",nbr, " becomes ", formattedNbr);
                 }
                 else {
                     formattedNbr = nbr;
-                };
-                break;
+                }
+                break; 
             case 3:
                 if (nbr < 10) {
                     formattedNbr = "00" + nbr;
@@ -27,13 +26,12 @@ function formattedNumber(nbr,digits=2){ //if no nbr of digits send use default 2
                     else {
                         formattedNbr = nbr;
                     }
-                };
+                }
                 break;
             default: 
                 formattedNbr = nbr; 
         }
     }
-    //console.log("returning ", formattedNbr);
     return formattedNbr;
 }
 
@@ -47,7 +45,6 @@ function dtLogger(_prefix){
     let milisek = formattedNumber(currentDT.getMilliseconds(),"4");
     return _prefix + maand + "-" + dag + " " + uur +":"+minuten+":"+sekonden+":"+milisek;
 }
-
 
 module.exports.dtLogger = dtLogger;
 module.exports.formatNumber = formattedNumber;

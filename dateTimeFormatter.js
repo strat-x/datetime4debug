@@ -5,33 +5,31 @@ function formattedNumber(nbr,digits=2){ //if no nbr of digits send use default 2
         formattedNbr = nbr;
     }
 
-    if ((typeof(nbr) === "number") && (digits === 2)) {
-        if (nbr < 10) {
-            formattedNbr = "0" + nbr;
-        }
-        else {
-            formattedNbr = nbr;
+    if ((typeof(nbr) === "number")) {
+        switch (digits) {
+            case 2:
+                if (nbr < 10) {
+                    formattedNbr = "0" + nbr;
+                }
+                else {
+                    formattedNbr = nbr;
+                }
+            case 3:
+                if (nbr < 10) {
+                    formattedNbr = "00" + nbr;
+                }
+                else {
+                    if (nbr < 100) {
+                        formattedNbr = "0" + nbr;
+                    }
+                    else {
+                        formattedNbr = nbr;
+                    }
+                }
+            default: 
+                formattedNbr = nbr; 
         }
     }
-        
-    if (typeof(nbr) === "number" && (digits === 3)) {
-        if (nbr < 10) {
-            formattedNbr = "00" + nbr;
-        }
-        else {
-            if (nbr < 100) {
-                formattedNbr = "0" + nbr;
-            }
-            else {
-                formattedNbr = nbr;
-            }
-        }
-    } 
-    
-    if (typeof(nbr) === "number" && ((digits !== 2) || (digits !== 3))) { //in case of different number of digits, just return the number
-            formattedNbr = nbr;             
-    }
-
 
     return formattedNbr;
 }

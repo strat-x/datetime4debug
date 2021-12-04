@@ -1,29 +1,37 @@
-function formattedNumber(nbr,digits="2"){ //if no nbr of digits send use default 2
-    if (digits === "2") {
-        if (nbr < 10) {
-            var formattedNbr = "0" + nbr;
-        }
-        else {
-            var formattedNbr = nbr;
-        }
-    } 
-    else {
-        if (digits === "3") {
+function formattedNumber(nbr,digits=2){ //if no nbr of digits send use default 2
+    if (typeof(nbr) === "number") {
+        if (digits === 2) {
             if (nbr < 10) {
-                var formattedNbr = "00" + nbr;
+                var formattedNbr = "0" + nbr;
             }
             else {
-                if (nbr < 100) {
-                    var formattedNbr = "0" + nbr;
+                var formattedNbr = nbr;
+            }
+        } 
+        else {
+            if (digits === 3) {
+                if (nbr < 10) {
+                    var formattedNbr = "00" + nbr;
                 }
                 else {
-                    var formattedNbr = nbr;
+                    if (nbr < 100) {
+                        var formattedNbr = "0" + nbr;
+                    }
+                    else {
+                        var formattedNbr = nbr;
+                    }
                 }
+            } else { //in case of different number of digits, just return the number
+                var formattedNbr = nbr;
+                //console.log('number of digits ', digits, " is not supported. return value ", formattedNbr," unaltered");                
             }
-        } else { //in case of different number of digits, just return the number
-            var formattedNbr = nbr;
         }
+    } else { //in case a string is provided iso number, return the string
+        //console.log('a string was provided, not a number');
+        var formattedNbr = nbr;
     }
+
+
     return formattedNbr;
 }
 
@@ -41,5 +49,6 @@ function dtLogger(_prefix){
 }
 
 
-module.exports = dtLogger;
+module.exports.dtLogger = dtLogger;
+module.exports.formatNumber = formattedNumber;
 

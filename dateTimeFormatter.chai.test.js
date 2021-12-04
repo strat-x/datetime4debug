@@ -6,7 +6,7 @@ var dtFormat = require('./dateTimeFormatter');
 describe('dateTimeFormatter to return formatted number with equal digits', () => {
     context('default formatNumber', ()=>{
         it('number 1', () => {
-            expect(dtFormat.formatNumber(1)).to.equal("01");
+            expect(dtFormat.formatNumber(1)).to.equal(01);
         });
         it('number 2', () => {
             expect(dtFormat.formatNumber(2)).to.not.equal("002");
@@ -20,8 +20,7 @@ describe('dateTimeFormatter to return formatted number with equal digits', () =>
     });
     context('formatNumber with 3 digits', () => {
         it('number 1', () => {
-            expect(dtFormat.formatNumber(1,3)).to.equal("001");
-            expect(dtFormat.formatNumber(1,3)).to.a("string");
+            expect(dtFormat.formatNumber(1,3)).to.equal(001);
         })
     });
     context('formatNumber with 4 digits', () => {

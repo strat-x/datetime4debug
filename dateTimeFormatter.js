@@ -1,34 +1,35 @@
 function formattedNumber(nbr,digits=2){ //if no nbr of digits send use default 2
     var formattedNbr;
 
-    if (typeof(nbr) === "number") {
-        if (digits === 2) {
-            if (nbr < 10) {
-                 formattedNbr = "0" + nbr;
+    if (typeof(nbr) === "string") { //in case a string is provided iso number, return the string
+        formattedNbr = nbr;
+    };
+
+    if ((typeof(nbr) === "number") && (digits === 2)) {
+        if (nbr < 10) {
+            formattedNbr = "0" + nbr;
+        }
+        else {
+            formattedNbr = nbr;
+        }
+    };
+        
+    if (typeof(nbr) === "number" && (digits === 3)) {
+        if (nbr < 10) {
+            formattedNbr = "00" + nbr;
+        }
+        else {
+            if (nbr < 100) {
+                formattedNbr = "0" + nbr;
             }
             else {
-                 formattedNbr = nbr;
-            }
-        } 
-        else {
-            if (digits === 3) {
-                if (nbr < 10) {
-                     formattedNbr = "00" + nbr;
-                }
-                else {
-                    if (nbr < 100) {
-                         formattedNbr = "0" + nbr;
-                    }
-                    else {
-                         formattedNbr = nbr;
-                    }
-                }
-            } else { //in case of different number of digits, just return the number
-                 formattedNbr = nbr;             
+                formattedNbr = nbr;
             }
         }
-    } else { //in case a string is provided iso number, return the string
-         formattedNbr = nbr;
+    } 
+    
+    if (typeof(nbr) === "number" && ((digits !== 2) || (digits !== 3))) { //in case of different number of digits, just return the number
+            formattedNbr = nbr;             
     }
 
 
